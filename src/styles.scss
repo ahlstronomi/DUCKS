@@ -1,6 +1,24 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
+main {
+  display: flex;
+  justify-content: space-between;
+  margin: 100px;
+  width: 80%;
+}
 app-report-ducks {
+  margin: 20px;
   display: flex;
   justify-content: space-around;
+}
+
+app-duck-list {
+  margin: 20px;
+  width: 100%;
+}
+
+
+@media only screen and (max-width: 1600px) {
+  main {
+    flex-direction: column;
+  }
 }
