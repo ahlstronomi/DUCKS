@@ -1,1 +1,6 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+app-report-ducks {
+  display: flex;
+  justify-content: space-around;
+}
