@@ -7,6 +7,11 @@
 .mat-table {
   overflow: auto;
   max-height: 100vw;
+  margin-top: 50px;
+}
+
+mat-cell {
+  padding: 15px;
 }
 
 .mat-header-cell.mat-sort-header-sorted {

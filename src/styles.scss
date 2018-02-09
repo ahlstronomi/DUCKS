@@ -26,6 +26,11 @@ app-duck-list {
   height: 1000px;
 }
 
+app-navbar {
+  position: fixed;
+  width: 100%;
+}
+
 
 @media only screen and (max-width: 1600px) {
   main {
