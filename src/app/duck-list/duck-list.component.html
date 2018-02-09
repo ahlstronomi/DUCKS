@@ -1,5 +1,5 @@
 <div class="example-container mat-elevation-z8">
-  <mat-table #table [dataSource]="dataSource" matSort>
+  <mat-table #table [dataSource]="dataSource" matSort id="duck-table">
 
     <!-- ID Column -->
     <ng-container matColumnDef="id">
@@ -22,7 +22,7 @@
     <!-- Date and time Column -->
     <ng-container matColumnDef="dateTime">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Date & Time </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.dateTime}} </mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.dateTime | date:'dd-MM-yyyy HH:mm ':'+0900'}} </mat-cell>
     </ng-container>
 
     <!-- Count Column -->

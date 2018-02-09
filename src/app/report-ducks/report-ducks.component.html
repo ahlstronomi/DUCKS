@@ -1,24 +1,16 @@
-<div class="container">
-
-
-  <form>
-    <h2>Have you seen some ducks?</h2>
-  <mat-form-field>
-    <input type="number" matInput placeholder="How many?">
-  </mat-form-field>
-
-  <mat-form-field>
-    <textarea matInput placeholder="Description"></textarea>
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-select placeholder="Species">
-      <mat-option value="option">Mallard</mat-option>
-      <mat-option value="option">Redhead</mat-option>
-      <mat-option value="option">Gadwall</mat-option>
-      <mat-option value="option">Canvasback</mat-option>
-      <mat-option value="option">Lesser scaup</mat-option>
-    </mat-select>
-  </mat-form-field>
-    </form>
-</div>
+<mat-form-field>
+  <input type="number" [(ngModel)]="count" matInput placeholder="How many?">
+</mat-form-field>
+<mat-form-field>
+  <textarea [(ngModel)]="description" matInput placeholder="Description"></textarea>
+</mat-form-field>
+<mat-form-field>
+  <mat-select [(ngModel)]="species" placeholder="Species">
+    <mat-option value="mallard">Mallard</mat-option>
+    <mat-option value="redhead">Redhead</mat-option>
+    <mat-option value="gadwall">Gadwall</mat-option>
+    <mat-option value="canvasback">Canvasback</mat-option>
+    <mat-option value="lesser scaup">Lesser scaup</mat-option>
+  </mat-select>
+</mat-form-field>
+<button mat-button (click)="sendSighting()">Send</button>

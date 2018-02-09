@@ -6,21 +6,33 @@ import 'hammerjs';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
-import {MatButtonModule, MatCheckboxModule, MatInputModule, MatSortModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatDialogModule, MatInputModule, MatSortModule, MatToolbarModule} from '@angular/material';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 
-import { DuckListComponent } from './duck-list/duck-list.component';
+import {DuckListComponent} from './duck-list/duck-list.component';
 import {HttpClientModule} from '@angular/common/http';
 import {SightingsService} from './services/sightings.service';
-import { ReportDucksComponent } from './report-ducks/report-ducks.component';
+import {ReportDucksComponent} from './report-ducks/report-ducks.component';
+import {TimeAgoPipe} from 'time-ago-pipe';
+import {FormsModule} from '@angular/forms';
+import {RouterModule, Routes} from '@angular/router';
+import { NavbarComponent } from './navbar/navbar.component';
+
+
+const appRoutes: Routes = [
+  { path: 'duck-list', component: DuckListComponent },
+  { path: 'report-ducks', component: ReportDucksComponent },
+];
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DuckListComponent,
-    ReportDucksComponent
+    ReportDucksComponent,
+    TimeAgoPipe,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +44,14 @@ import { ReportDucksComponent } from './report-ducks/report-ducks.component';
     MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    MatDialogModule,
+    MatToolbarModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true }
+    )
   ],
   providers: [SightingsService],
   bootstrap: [AppComponent]

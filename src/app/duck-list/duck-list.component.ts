@@ -7,32 +7,61 @@ import {SightingsService} from '../services/sightings.service';
   templateUrl: './duck-list.component.html',
   styleUrls: ['./duck-list.component.scss']
 })
-export class DuckListComponent implements OnInit, AfterViewInit {
+export class DuckListComponent implements OnInit, AfterViewInit, Sighting {
+  id: string;
+  species: string;
+  description: string;
+  dateTime: string;
+  count: number;
   displayedColumns = ['id', 'species', 'description', 'dateTime', 'count'];
 
   @ViewChild(MatSort) sort: MatSort;
-  dataSource: any;
+  dataSource: Sighting;
 
   constructor(public sightingsService: SightingsService) {
   }
 
   ngOnInit() {
+    this.getData();
+  }
+
+  ngAfterViewInit() {
+    this.sortData();
+  }
+
+  getData() {
     this.sightingsService.getAllSightings().subscribe(
-      data => {
-        console.log(data);
-        this.dataSource = new MatTableDataSource(data);
+      response => {
+        console.log(response);
+        this.dataSource = new MatTableDataSource(response);
       }
     );
   }
 
-  ngAfterViewInit() {
+  sortData() {
     this.sightingsService.getAllSightings().subscribe(
       data => {
         console.log(data);
-    this.dataSource.sort = this.sort;
+        this.dataSource.sort = this.sort;
       }
     );
   }
+
+  updateList() {
+    this.getData();
+    this.sortData();
+  }
+
+}
+
+
+export interface Sighting {
+  sort: MatSort;
+  id: string;
+  species: string;
+  description: string;
+  dateTime: string;
+  count: number;
 }
 
 
