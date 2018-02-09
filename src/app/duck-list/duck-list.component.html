@@ -1,34 +1,35 @@
+<p class="hint">Click column header to sort the table</p>
 <div class="example-container mat-elevation-z8">
   <mat-table #table [dataSource]="dataSource" matSort id="duck-table">
 
     <!-- ID Column -->
     <ng-container matColumnDef="id">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> ID</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.id}}</mat-cell>
     </ng-container>
 
     <!-- Species Column -->
     <ng-container matColumnDef="species">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.species}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Name</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.species}}</mat-cell>
     </ng-container>
 
     <!-- Description Column -->
     <ng-container matColumnDef="description">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Description </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Description</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.description}}</mat-cell>
     </ng-container>
 
     <!-- Date and time Column -->
     <ng-container matColumnDef="dateTime">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Date & Time </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.dateTime | date:'dd-MM-yyyy HH:mm ':'+0900'}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Date & Time</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.dateTime | date:'dd-MM-yyyy HH:mm ':'+0900'}}</mat-cell>
     </ng-container>
 
     <!-- Count Column -->
     <ng-container matColumnDef="count">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Count </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.count}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Count</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.count}}</mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

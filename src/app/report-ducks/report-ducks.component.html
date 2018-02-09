@@ -1,18 +1,21 @@
 <div class="container">
-<mat-form-field>
-  <input type="number" [(ngModel)]="count" matInput placeholder="How many?">
-</mat-form-field>
-<mat-form-field>
-  <textarea [(ngModel)]="description" matInput placeholder="Description"></textarea>
-</mat-form-field>
-<mat-form-field>
-  <mat-select [(ngModel)]="species" placeholder="Species">
-    <mat-option value="mallard">Mallard</mat-option>
-    <mat-option value="redhead">Redhead</mat-option>
-    <mat-option value="gadwall">Gadwall</mat-option>
-    <mat-option value="canvasback">Canvasback</mat-option>
-    <mat-option value="lesser scaup">Lesser scaup</mat-option>
-  </mat-select>
-</mat-form-field>
-<button mat-button (click)="sendSighting()" [routerLink]="'/duck-list'">Send</button>
+  <mat-form-field>
+    <input type="number" [(ngModel)]="count" matInput placeholder="How many?">
+  </mat-form-field>
+  <mat-form-field>
+    <textarea [(ngModel)]="description" matInput placeholder="Description"></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select [(ngModel)]="species" placeholder="Species">
+      <mat-option value="mallard">Mallard</mat-option>
+      <mat-option value="redhead">Redhead</mat-option>
+      <mat-option value="gadwall">Gadwall</mat-option>
+      <mat-option value="canvasback">Canvasback</mat-option>
+      <mat-option value="lesser scaup">Lesser scaup</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="btn-row">
+    <button mat-button (click)="sendSighting()" [routerLink]="'/duck-list'">Send</button>
+    <button mat-button [routerLink]="'/duck-list'">Back</button>
+  </div>
 </div>

@@ -1,21 +1,17 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-html {
+html,
+body {
   background-color: #F5F5F5;
+  margin: 0;
+  overflow: hidden;
 }
+
 button {
   background-color: white;
 }
-main {
-  display: flex;
-  justify-content: space-between;
-  margin: 100px;
-  width: 80%;
-}
-
 
 app-report-ducks {
-  margin: 20px;
   display: flex;
   justify-content: space-around;
 }
