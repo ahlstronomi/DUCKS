@@ -6,7 +6,10 @@ import 'hammerjs';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
-import {MatButtonModule, MatCheckboxModule, MatDialogModule, MatInputModule, MatSortModule, MatToolbarModule} from '@angular/material';
+import {
+  MatButtonModule, MatCheckboxModule, MatInputModule, MatSnackBarModule, MatSortModule,
+  MatToolbarModule
+} from '@angular/material';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 
@@ -46,7 +49,7 @@ const appRoutes: Routes = [
     MatSelectModule,
     HttpClientModule,
     FormsModule,
-    MatDialogModule,
+    MatSnackBarModule,
     MatToolbarModule,
     RouterModule.forRoot(
       appRoutes,

@@ -1,6 +1,7 @@
 ///<reference path="../../../node_modules/@angular/core/src/metadata/directives.d.ts"/>
 import {Component, OnInit} from '@angular/core';
 import {SightingsService} from '../services/sightings.service';
+import {MatSnackBar} from '@angular/material';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class ReportDucksComponent implements OnInit {
   species: string;
   dateTime = new Date();
 
-  constructor(public sightingsService: SightingsService) {
+  constructor(public sightingsService: SightingsService, public snackBar: MatSnackBar) {
   }
 
   ngOnInit() {
@@ -24,13 +25,27 @@ export class ReportDucksComponent implements OnInit {
   sendSighting() {
     let formOk = false;
 
-    if (this.count !== undefined && this.description !== undefined && this.species !== undefined) {
+    if (this.count !== undefined && this.count > 0 && this.description !== undefined && this.species !== undefined) {
       formOk = true;
     }
 
     if (formOk) {
       this.sightingsService.postSighting(this.count, this.description, this.species);
+      const snackbarRef = this.snackBar.open('Sighting added!', '🦆🦆🦆', {
+        duration: 2000,
+      });
+
+      snackbarRef.afterDismissed().subscribe(() => {
+        location.reload();
+      });
+
+    } else {
+      this.snackBar.open('Invalid values!', '❌❌❌', {
+        duration: 2000,
+      });
     }
+
+
   }
 
 }

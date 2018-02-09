@@ -27,7 +27,6 @@ export class SightingsService {
     console.log(body);
     this.http.post(this.serverUrl, body).subscribe(data => {
       console.log(data);
-      location.reload();
     });
 
   }

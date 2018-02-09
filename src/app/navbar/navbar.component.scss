@@ -10,9 +10,17 @@ mat-toolbar {
     flex-direction: row;
 
     li {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
       font-size: 0.8em;
-      margin: 20px 20px 0px 0px;
+      padding: 10px;
+      margin: 10px;
       color: white;
+    }
+    li:hover {
+      background-color: rgba(66,66,66,0.4);
+      color: #F1F1F1;
     }
   }
 }
