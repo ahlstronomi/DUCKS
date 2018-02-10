@@ -1,5 +1,5 @@
-<p class="hint">Click column header to sort the table</p>
-<div class="example-container mat-elevation-z8">
+<p class="hint">Click the column header to sort the table</p>
+<div class="container mat-elevation-z8">
   <mat-table #table [dataSource]="dataSource" matSort id="duck-table">
 
     <!-- ID Column -->
@@ -36,3 +36,4 @@
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
 </div>
+<p>© Mikael Ahlström 2018</p>
