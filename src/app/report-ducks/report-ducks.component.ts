@@ -22,6 +22,17 @@ export class ReportDucksComponent implements OnInit {
   ngOnInit() {
   }
 
+  snackbarDucks(count) {
+    let ducks = '🦆';
+
+    if (count === 2) {
+      ducks = '🦆🦆';
+    } else if (count >= 3) {
+      ducks = '🦆🦆🦆';
+    }
+    return ducks;
+  }
+
   sendSighting() {
     let formOk = false;
 
@@ -31,7 +42,7 @@ export class ReportDucksComponent implements OnInit {
 
     if (formOk) {
       this.sightingsService.postSighting(this.count, this.description, this.species);
-      const snackbarRef = this.snackBar.open('Sighting added!', '🦆🦆🦆', {
+      const snackbarRef = this.snackBar.open('Sighting added!', this.snackbarDucks(this.count), {
         duration: 2000,
       });
 

@@ -8,15 +8,16 @@ mat-toolbar {
   background-color: #3F51B5;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 
-  #report-page {
+  .nav-link {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 10px;
     margin: 10px;
-
+    text-decoration: none;
   }
-  #report-page:hover {
+
+  .nav-link:hover {
     background-color: rgba(66, 66, 66, 0.4);
     color: #F1F1F1;
   }
@@ -24,6 +25,10 @@ mat-toolbar {
 
 #author-name {
   margin-right: 20px;
+}
+
+#author-name:visited {
+  color: #FFF;
 }
 
 @media only screen and (max-width: 440px) {
