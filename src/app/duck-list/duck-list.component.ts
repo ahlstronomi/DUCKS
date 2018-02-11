@@ -16,7 +16,8 @@ export class DuckListComponent implements OnInit, AfterViewInit, Sighting {
   displayedColumns = ['id', 'species', 'description', 'dateTime', 'count'];
 
   @ViewChild(MatSort) sort: MatSort;
-  dataSource: Sighting;
+  dataSource: any;
+  sightingsData: any;
 
   constructor(public sightingsService: SightingsService) {
   }
@@ -33,7 +34,8 @@ export class DuckListComponent implements OnInit, AfterViewInit, Sighting {
     this.sightingsService.getAllSightings().subscribe(
       response => {
         console.log(response);
-        this.dataSource = new MatTableDataSource(response);
+        this.sightingsData = response;
+        this.dataSource = new MatTableDataSource(this.sightingsData);
       }
     );
   }
