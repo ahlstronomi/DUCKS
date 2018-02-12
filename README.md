@@ -1,6 +1,7 @@
 # Vincit Koodarijahti
 
 Framework: Angular
+
 UI-library: Material Angular
 
 Fetches the data from the Vincit backend server and it must be installed and running on your computer.
