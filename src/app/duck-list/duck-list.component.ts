@@ -33,7 +33,6 @@ export class DuckListComponent implements OnInit, AfterViewInit, Sighting {
   getData() {
     this.sightingsService.getAllSightings().subscribe(
       response => {
-        console.log(response);
         this.sightingsData = response;
         this.dataSource = new MatTableDataSource(this.sightingsData);
       }
@@ -43,17 +42,10 @@ export class DuckListComponent implements OnInit, AfterViewInit, Sighting {
   sortData() {
     this.sightingsService.getAllSightings().subscribe(
       data => {
-        console.log(data);
         this.dataSource.sort = this.sort;
       }
     );
   }
-
-  updateList() {
-    this.getData();
-    this.sortData();
-  }
-
 }
 
 
