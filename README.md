@@ -4,7 +4,7 @@ Framework: Angular
 
 UI-library: Material Angular
 
-Fetches the data from the Vincit backend server and it must be installed and running on your computer.
+Fetches the data from the Vincit backend server and it must be installed and running on your computer. Download it from [here](https://github.com/Vincit/summer-2018/).
 
 ## Development server
 
